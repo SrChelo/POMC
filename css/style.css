@@ -1,0 +1,322 @@
+@import url("https://use.typekit.net/zbf8ogm.css");
+*{
+    font-family: nunito, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+a{
+    text-decoration: none;
+}
+html,body{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+body{
+    background: #ffffff;
+    z-index: -2;
+}
+.menu{
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: grid;
+    grid-template-columns: 100%;
+}
+.menu img{
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+.menu .container{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+}
+.menu .container .top{
+    border-bottom: 1px solid rgba(255,255,255,.5);
+    height: 50px;
+    display: grid;
+    grid-template-columns: 30% 20% 45%;
+    grid-template-areas: 'net space contact';
+}
+.menu .container .top .nets,.menu .container .top .contact{
+    grid-area: net;
+    display: flex;
+    margin: auto;
+}
+.menu .container .top .contact .group{
+    color: #fff;
+    padding: 7px;
+    width: 90%;
+    display: flex;
+}
+.menu .container .top .contact .group label{
+    font-size: .9em;
+    margin-left: 10px;
+}
+.menu .container .top .nets span{
+    padding: 7px;
+    color: #fff;
+    font-size: 1.3em;
+}
+.menu .container .top .contact{
+    grid-area: contact;
+}
+.menu .container .options{
+    display: grid;
+    width: 100%;
+    height: 100px;
+    grid-template-columns: 20% 25% 55%;
+    grid-template-areas: 'logo space options';
+    padding-top: 20px;
+}
+.menu .container .options input{
+    display: none;
+}
+.menu .container .options .logo{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    text-align: center;
+    grid-area: logo;
+}
+.menu .container .options .logo img{
+    height: 65px;
+    width: auto;
+    left: 40px;
+}
+.menu .container .options .opcs{
+    width: 100%;
+    display: flex;
+    grid-area: options;
+}
+.menu .container .options .opcs .hamburguer{
+    font-size: 3em;
+    color: #fff;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    display: none;
+}
+.menu .container .options .opcs .body{
+    width: 100%;
+    margin: auto;
+}
+.menu .container .options .opcs .body .cross{
+    font-size: 3em;
+    color: #fff;
+    position: absolute;
+    display: none;
+}
+.menu .container .options .opcs .body .list{
+    display: flex;
+    margin: auto;
+    width: 100%;
+}
+.menu .container .options .opcs .body .list .opc{
+    width: 100%;
+    color: #fff;
+    font-size: 1.2em;
+}
+.menu .container .options .opcs .body .list .opc.has-childs:before{
+    position: absolute;
+    content: "\e313";
+    font-size: 16px;
+    margin-left: -20px;
+    font-family: 'icomoon';
+}
+.menu .container .options .opcs .body .list .has-childs .submenu:before{
+    border: solid transparent;
+    content: " ";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 13px 15px 13px;
+    border-color: transparent transparent #fff transparent;
+    position: absolute;
+    margin-left: 20px;
+    margin-top: -15px;
+}
+.menu .container .options .opcs .body .list .has-childs .submenu{
+    box-shadow: 0px 0px 1px #000;
+    background: #fff;
+    color: #000;
+    width: 190px;
+    margin-left: -20px;
+    position: absolute;
+    margin-top: 50px;
+    opacity: 0;
+    display: none;
+}
+.menu .container .options .opcs .body .list .has-childs .submenu .op{
+    width: 100%;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu .container .options .opcs .body .list .has-childs .submenu .op:hover{
+    background: rgba(0, 0, 0, 0.05);
+}
+.menu .container .options .opcs .body .list .has-childs:hover .submenu{
+    animation: appear .4s;
+    display: block;
+    opacity: 1;
+    margin-top: 15px;
+}
+@keyframes appear{
+    from { display:none; opacity: 0; margin-top: 40px; }
+    1% {display: block;}
+    to { opacity: 1; margin-top: 15px; }
+}
+
+.main{
+    background: #fff;
+    width: 100%;
+    min-height: 20%;
+}
+
+
+@media screen and (max-width: 720px){
+    .menu img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .menu .container .top{
+        grid-template-columns: 30% 50% 20%;
+        grid-template-areas: 'net space contact';
+    }
+    .menu .container .top .contact{
+        margin: 0px;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .menu .container .top .contact .group{
+        width: 100%;
+    }
+    .menu .container .top .contact .group label{
+        display: none;
+    }
+    .menu .container .options .opcs .hamburguer{
+        display: block;
+    }
+    .menu .container .options .opcs .body .cross{
+        position: static;
+        display: block;
+        color: #000;
+        padding-top: 20px;
+        padding-right: 20px;
+        margin-bottom: 20px;
+    }
+    .menu .container .options .opcs .body .list{
+        display: block;
+        grid-template-columns: 100%;
+        position: fixed;
+        top: 0px;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        background: #fff;
+        text-align: right;
+        transition: .3s;
+        z-index: 100;
+    }
+    .menu .container .options .opcs .body .back{
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: -1;
+    }
+    .menu .container .options .opcs .body .list .opc{
+        text-align: center;
+        font-size: 1.3em;
+        padding: 10px;
+        color: #000;
+    }
+    .menu .container .options .opcs .body{
+        display: inline;
+    }
+    .menu .container .options #ham:checked ~ .opcs .body .list{
+        right: 0px;
+    }
+    .menu .container .options #ham:checked ~ .opcs .body{
+        grid-template-columns: 100%;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        transition: .3s;
+    }
+    .menu .container .options .opc .has-childs:hover{
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    .menu .container .options .opcs .body .list .has-childs .submenu:before{
+        border: none;
+        content: " ";
+        width: 0;
+        height: 0;
+        border-style: none;
+        border-width: none;
+        border-color: none;
+        position: absolute;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+    .menu .container .options .opcs .body .list .has-childs .submenu{
+        box-shadow: none;
+        background: #fff;
+        color: #000;
+        width: 100%;
+        height: 0px;
+        margin: 0px;
+        position: static;
+        display: none;
+        opacity: 0;
+        transition: none;
+    }
+    .menu .container .options .opcs .body .list .has-childs .submenu .op{
+        width: 100%;
+        height: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+    }
+    .menu .container .options .opcs .body .list .has-childs .submenu .op:hover{
+        background: rgba(0, 0, 0, 0.05);
+    }
+    .menu .container .options .opcs .body .list .has-childs:hover .submenu{
+        animation: appear .4s;
+        height: auto;
+        display: block;
+        opacity: 1;
+    }
+    @keyframes show {
+        from {
+            height: 0px;
+            display: none;
+            opacity: 0;
+        }
+        50%{
+            height: 10px;
+            display: block;
+            opacity: 0.1;
+        }
+        to {
+            height: auto;
+            display: block;
+            opacity: 0;
+        }
+    }
+}

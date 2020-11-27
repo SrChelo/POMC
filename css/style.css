@@ -190,10 +190,13 @@ body{
     grid-template-columns: 100%;
     text-align: center;
 }
-.menu .container .body-cont img{
+.menu .container .body-cont .img{
     width: 100%;
-    max-width: 200px;
     margin: auto;
+}
+.menu .container .body-cont .img img{
+    width: 100%;
+    max-width: 400px;
 }
 
 

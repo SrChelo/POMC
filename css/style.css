@@ -185,7 +185,6 @@ body{
 
 .menu .container .body-cont{
     width: 100%;
-    background: red;
     display: grid;
     grid-template-columns: 100%;
     text-align: center;
@@ -196,7 +195,64 @@ body{
 }
 .menu .container .body-cont .img img{
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
+    position: static;
+    margin: auto;
+}
+.menu .container .body-cont .text{
+    color: #fff;
+    font-size: 3em;
+    text-transform: uppercase;
+}
+.menu .container .footer{
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+.menu .container .footer .card{
+    width: 85%;
+    height: 100px;
+    background: rgba(0,0,0,.6);
+    border-radius: 7px;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 30% 5% 70%;
+    grid-template-areas: 'img space header'
+                         'img space text';
+    transition: .3s;
+}
+.menu .container .footer .card:hover{
+    margin-top: -20px;
+    background: rgba(255,255,255,.6);
+}
+.menu .container .footer .card:hover .header{
+    color: #000;
+}
+.menu .container .footer .card:hover .text{
+    color: #555;
+}
+.menu .container .footer .card .img {
+    grid-area: img;
+    width: 100%;
+}
+.menu .container .footer .card .img img{
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    position: static;
+}
+.menu .container .footer .card .header{
+    grid-area: header;
+    color: #ccc;
+    font-size: 1.3em;
+}
+.menu .container .footer .card .text{
+    grid-area: text;
+    color: #777;
+    font-size: 1em;
 }
 
 
@@ -204,6 +260,8 @@ body{
 .main{
     background: #fff;
     width: 100%;
+    max-width: 1000px;
+    margin: auto;
     min-height: 20%;
 }
 
@@ -333,6 +391,78 @@ body{
         display: block;
         opacity: 1;
     }
+    .menu .container .body-cont .img{
+        width: 100%;
+        margin: auto;
+    }
+    .menu .container .body-cont .img img{
+        width: 90%;
+        max-width: 300px;
+        position: static;
+        margin: auto;
+    }
+    .menu .container .body-cont .text{
+        color: #fff;
+        font-size: 3em;
+    }
+    .menu .container .footer{
+        width: 90%;
+        height: 100%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+    }
+    .menu .container .footer .card{
+        width: 85%;
+        height: 100px;
+        background: rgba(0,0,0,.6);
+        border-radius: 7px;
+        padding: 5px;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: 'img';
+        transition: .3s;
+    }
+    .menu .container .footer .card:hover{
+        margin-top: -20px;
+        background: rgba(255,255,255,.6);
+    }
+    .menu .container .footer .card:hover .header{
+        color: #000;
+    }
+    .menu .container .footer .card:hover .text{
+        color: #555;
+    }
+    .menu .container .footer .card .img {
+        grid-area: img;
+        width: 100%;
+    }
+    .menu .container .footer .card .img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: static;
+    }
+    .menu .container .footer .card .header{
+        display: none;
+        grid-area: header;
+        color: #ccc;
+        font-size: 1.3em;
+    }
+    .menu .container .footer .card .text{
+        display: none;
+        grid-area: text;
+        color: #777;
+        font-size: 1em;
+    }
+
+
+
+
+
+
+
+
     @keyframes show {
         from {
             height: 0px;
